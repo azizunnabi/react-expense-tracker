@@ -6,10 +6,13 @@ function App() {
   const openModel = () => {
     setModel(true);
   };
+  const closeModel = () => {
+    setModel(false);
+  };
   return (
     <div className="max-w-screen-lg mx-auto my-10 flex justify-center">
       <Button open={openModel} />
-      <Model modelState={model} />
+      <Model modelState={model} close={closeModel} />
     </div>
   );
 }
