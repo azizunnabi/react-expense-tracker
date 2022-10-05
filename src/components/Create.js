@@ -1,6 +1,22 @@
+// import React from "react";
+import { useState } from "react";
 const Create = (props) => {
+  // const [state, setState] = React.useState('')
+  const [money, setMoney] = useState(0);
+  const [message, setMessage] = useState("");
+  const submitForm = (event) => {
+    event.preventDefault();
+    props.createRecord({
+      // money:money
+      money,
+      // message: message
+      message,
+    });
+    setMoney(0);
+    setMessage("");
+  };
   return (
-    <form>
+    <form onSubmit={submitForm}>
       <h1 className="text-lg capitalize font-medium text-gray-800 mb-4">
         add new record
       </h1>
@@ -17,6 +33,8 @@ const Create = (props) => {
           id="money"
           placeholder="money..."
           className="border w-full px-4 py-2.5 rounded-md outline-none"
+          onChange={(event) => setMoney(event.target.value)}
+          value={money}
         />
       </div>
       <div className="mt-4">
@@ -32,14 +50,16 @@ const Create = (props) => {
           id="message"
           placeholder="message..."
           className="border w-full px-4 py-2.5 rounded-md outline-none"
+          onChange={(event) => setMessage(event.target.value)}
+          value={message}
         />
       </div>
       <div className="mt-6">
-        <button className="capitalize bg-emerald-600 text-white font-medium text-sm rounded px-4 py-3">
+        <button className="capitalize bg-emerald-600 text-white font-semibold text-sm rounded px-4 py-3">
           create new record
         </button>
         <button
-          className="ml-5 capitalize bg-rose-600 text-white font-medium text-sm rounded px-6 py-3"
+          className="ml-5 capitalize bg-rose-600 text-white font-semibold text-sm rounded px-6 py-3"
           onClick={(event) => {
             event.preventDefault();
             props.closeForm();
