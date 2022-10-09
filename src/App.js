@@ -11,8 +11,21 @@ function App() {
     history: [],
   });
   const addRecord = (userData) => {
-    console.log(userData);
+    let myIncome = 0;
+    let myExpense = 0;
+    if (Number(userData.money) > 0) {
+      myIncome = Number(userData.money);
+    } else {
+      myExpense = Number(userData.money);
+    }
+    setData({
+      ...data,
+      balance: data.balance + Number(userData.money),
+      income: data.income + myIncome,
+      expenses: data.expenses + myExpense,
+    });
   };
+  console.log(data);
   const openModel = () => {
     setModel(true);
   };
