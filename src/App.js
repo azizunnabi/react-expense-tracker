@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "./components/Button";
 import Model from "./components/Model";
 import Create from "./components/Create";
+import Display from "./components/Display";
 function App() {
   const [model, setModel] = useState(false);
   const [data, setData] = useState({
@@ -24,6 +25,7 @@ function App() {
       income: data.income + myIncome,
       expenses: data.expenses + myExpense,
     });
+    setModel(false);
   };
   console.log(data);
   const openModel = () => {
@@ -34,12 +36,15 @@ function App() {
   };
   return (
     <div className="max-w-screen-lg mx-auto my-10 flex justify-center">
-      <Button open={openModel} />
-      <Model modelState={model} close={closeModel}>
-        {/* <h1>Hello rehan</h1>
+      <div>
+        <Button open={openModel} />
+        <Display myData={data} />
+        <Model modelState={model} close={closeModel}>
+          {/* <h1>Hello rehan</h1>
         <p>Hello Aziz</p> */}
-        <Create closeForm={closeModel} createRecord={addRecord} />
-      </Model>
+          <Create closeForm={closeModel} createRecord={addRecord} />
+        </Model>
+      </div>
     </div>
   );
 }
