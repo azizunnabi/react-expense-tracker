@@ -1,4 +1,5 @@
 import Currency from "currency-formatter";
+import History from "./History";
 const Display = (props) => {
   return (
     <div className="w-[500px] my-5">
@@ -23,6 +24,7 @@ const Display = (props) => {
             {Currency.format(props.myData.expenses, { code: "USD" })}
           </h1>
         </div>
+        <History history={props.myData.history} />
       </div>
     </div>
   );

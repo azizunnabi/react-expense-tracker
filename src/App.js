@@ -24,6 +24,7 @@ function App() {
       balance: data.balance + Number(userData.money),
       income: data.income + myIncome,
       expenses: data.expenses + myExpense,
+      history: [...data.history, userData],
     });
     setModel(false);
   };
@@ -34,6 +35,7 @@ function App() {
   const closeModel = () => {
     setModel(false);
   };
+  console.log(data);
   return (
     <div className="max-w-screen-lg mx-auto my-10 flex justify-center">
       <div>
