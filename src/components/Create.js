@@ -55,11 +55,11 @@ const Create = (props) => {
         />
       </div>
       <div className="mt-6">
-        <button className="capitalize bg-emerald-600 text-white font-semibold text-sm rounded px-4 py-3">
+        <button className="w-full capitalize bg-emerald-600 text-white font-semibold text-sm rounded px-4 py-3">
           create new record
         </button>
         <button
-          className="ml-5 capitalize bg-rose-600 text-white font-semibold text-sm rounded px-6 py-3"
+          className="w-full mt-2 capitalize bg-rose-600 text-white font-semibold text-sm rounded px-6 py-3"
           onClick={(event) => {
             event.preventDefault();
             props.closeForm();
