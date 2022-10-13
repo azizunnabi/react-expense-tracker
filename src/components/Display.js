@@ -2,7 +2,7 @@ import Currency from "currency-formatter";
 import History from "./History";
 const Display = (props) => {
   return (
-    <div className="w-[500px] my-5">
+    <div className="w-full sm:w-[500px] my-5">
       <div className="bg-indigo-600 rounded p-10 w-full text-center">
         <div className="capitalize text-white text-base">total balance</div>
         <h1 className="text-4xl text-white font-semibold mt-2">

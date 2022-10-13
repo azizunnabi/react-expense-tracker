@@ -38,7 +38,7 @@ function App() {
   console.log(data);
   return (
     <div className="max-w-screen-lg mx-auto my-10 flex justify-center">
-      <div>
+      <div className="px-10">
         <Button open={openModel} />
         <Display myData={data} />
         <Model modelState={model} close={closeModel}>
